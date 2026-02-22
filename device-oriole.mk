@@ -20,7 +20,6 @@ $(call inherit-product-if-exists, packages/apps/PixelParts/device.mk)
 
 # Overlays
 DEVICE_PACKAGE_OVERLAYS += \
-    device/google/raviole/oriole/overlay-lineage \
     device/google/raviole/overlay-lineage
 
 PRODUCT_PACKAGES += \
@@ -46,6 +45,9 @@ PRODUCT_PACKAGES += \
     SettingsOverlayGR1YH \
     SystemUIGoogleOverlayProductOriole \
     SystemUIGoogleOverlayVendorOriole
+
+PRODUCT_PACKAGES += \
+    ApertureOverlayOriole
 
 # PowerShare
 include hardware/google/pixel/powershare/device.mk
