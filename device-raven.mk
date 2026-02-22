@@ -9,6 +9,7 @@ TARGET_LINUX_KERNEL_VERSION := $(RELEASE_KERNEL_ORIOLE_VERSION)
 TARGET_KERNEL_DIR ?= device/google/raviole-kernels/aosp
 TARGET_BOARD_KERNEL_HEADERS ?= $(TARGET_KERNEL_DIR)/kernel-headers
 
+# Inherit from gs101
 include device/google/gs101/device-shipping-common.mk
 
 # Camera
@@ -16,70 +17,6 @@ $(call inherit-product-if-exists, vendor/google/camera/config.mk)
 
 # Pixel Parts
 $(call inherit-product-if-exists, packages/apps/PixelParts/device.mk)
-
-# Bluetooth
-PRODUCT_PACKAGES += \
-    android.hardware.bluetooth.prebuilt.xml \
-    android.hardware.bluetooth_le.prebuilt.xml
-
-# UWB
-PRODUCT_COPY_FILES += \
-    frameworks/native/data/etc/android.hardware.uwb.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.uwb.xml
-
-# Recovery files
-PRODUCT_COPY_FILES += \
-	device/google/gs101/conf/init.recovery.device.rc:$(TARGET_COPY_OUT_RECOVERY)/root/init.recovery.raven.rc
-
-# NFC
-PRODUCT_COPY_FILES += \
-	frameworks/native/data/etc/android.hardware.nfc.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.nfc.xml \
-	frameworks/native/data/etc/android.hardware.nfc.hce.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.nfc.hce.xml \
-	frameworks/native/data/etc/android.hardware.nfc.hcef.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.nfc.hcef.xml \
-	frameworks/native/data/etc/com.nxp.mifare.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/com.nxp.mifare.xml \
-	frameworks/native/data/etc/android.hardware.nfc.uicc.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.nfc.uicc.xml \
-	frameworks/native/data/etc/android.hardware.nfc.ese.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.nfc.ese.xml
-
-PRODUCT_PACKAGES += \
-	android.hardware.nfc-service.st
-
-# SecureElement
-PRODUCT_PACKAGES += \
-	android.hardware.secure_element@1.2-service-gto \
-	android.hardware.secure_element@1.2-service-gto-ese2
-
-PRODUCT_COPY_FILES += \
-	frameworks/native/data/etc/android.hardware.se.omapi.ese.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.se.omapi.ese.xml \
-	frameworks/native/data/etc/android.hardware.se.omapi.uicc.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.se.omapi.uicc.xml
-
-# This device is shipped with 31 (Android S)
-PRODUCT_SHIPPING_API_LEVEL := 31
-
-# Device features
-PRODUCT_COPY_FILES += \
-    frameworks/native/data/etc/handheld_core_hardware.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/handheld_core_hardware.xml
-
-# Disable AVF Remote Attestation
-PRODUCT_AVF_REMOTE_ATTESTATION_DISABLED := true
-
-# ANGLE - Almost Native Graphics Layer Engine
-PRODUCT_PACKAGES += \
-    ANGLE
-
-# EUICC
-PRODUCT_COPY_FILES += \
-    frameworks/native/data/etc/android.hardware.telephony.euicc.xml:$(TARGET_COPY_OUT_PRODUCT)/etc/permissions/android.hardware.telephony.euicc.xml
-
-# Fingerprint
-PRODUCT_COPY_FILES += \
-    frameworks/native/data/etc/android.hardware.fingerprint.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.fingerprint.xml
-
-# GNSS
-PRODUCT_PACKAGES += \
-    android.hardware.sensors-V2-ndk.vendor:64
-
-# Init
-PRODUCT_PACKAGES += \
-    init.recovery.raven.touch.rc
 
 # Overlays
 DEVICE_PACKAGE_OVERLAYS += \
@@ -121,13 +58,27 @@ TARGET_VENDOR_PROP += $(DEVICE_PATH)/$(DEVICE_CODENAME)/vendor.prop
 PRODUCT_COPY_FILES += \
 	$(LOCAL_PATH)/product-sysconfig-stock.xml:$(TARGET_COPY_OUT_PRODUCT)/etc/sysconfig/product-sysconfig-stock.xml
     
-# Sensors
+# Recovery
+PRODUCT_COPY_FILES += \
+    device/google/gs101/conf/init.recovery.device.rc:$(TARGET_COPY_OUT_RECOVERY)/root/init.recovery.raven.rc
+
 PRODUCT_PACKAGES += \
-    sensors.dynamic_sensor_hal
+    init.recovery.raven.touch.rc
+
+# SecureElement
+PRODUCT_PACKAGES += \
+    android.hardware.secure_element@1.2-service-gto-ese2
+
+# Shipping API level
+PRODUCT_SHIPPING_API_LEVEL := 31
 
 # Soong namespaces
 PRODUCT_SOONG_NAMESPACES += \
     $(DEVICE_PATH)
+
+# UWB
+PRODUCT_COPY_FILES += \
+    frameworks/native/data/etc/android.hardware.uwb.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.uwb.xml
 
 # Vibrator
 PRODUCT_ARTIFACT_PATH_REQUIREMENT_ALLOWED_LIST += \
