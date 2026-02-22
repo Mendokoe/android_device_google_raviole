@@ -19,9 +19,6 @@ $(call inherit-product-if-exists, vendor/google/camera/config.mk)
 $(call inherit-product-if-exists, packages/apps/PixelParts/device.mk)
 
 # Overlays
-DEVICE_PACKAGE_OVERLAYS += \
-    device/google/raviole/overlay-lineage
-
 PRODUCT_PACKAGES += \
     DeviceAsWebcamRaviole \
     FrameworkResOverlayProductRaviole \
@@ -47,7 +44,9 @@ PRODUCT_PACKAGES += \
     SystemUIGoogleOverlayVendorOriole
 
 PRODUCT_PACKAGES += \
-    ApertureOverlayOriole
+    ApertureOverlayOriole \
+    LineageSdkOverlayRaviole \
+    SettingsOverlayRaviole
 
 # PowerShare
 include hardware/google/pixel/powershare/device.mk
