@@ -11,7 +11,7 @@ TARGET_KERNEL_DIR ?= device/google/raviole-kernels/aosp
 TARGET_BOARD_KERNEL_HEADERS ?= $(TARGET_KERNEL_DIR)/kernel-headers
 
 # Inherit from gs101
-include device/google/gs101/device-shipping-common.mk
+include device/google/gs101/common.mk
 
 # Camera
 $(call inherit-product-if-exists, vendor/google/camera/config.mk)
