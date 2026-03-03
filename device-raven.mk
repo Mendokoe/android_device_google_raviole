@@ -123,3 +123,19 @@ DEVICE_MANIFEST_FILE += \
     $(DEVICE_PATH)/vintf/manifest.xml
 DEVICE_PRODUCT_COMPATIBILITY_MATRIX_FILE += \
     $(DEVICE_PATH)/vintf/device_framework_matrix_product.xml
+
+# IMS Packages
+PRODUCT_PACKAGES += \
+    CarrierConfig \
+    ims-ext-common \
+    ImsServiceEntitlement
+
+# VoLTE & VoWiFi Overrides (Force Enable)
+PRODUCT_SYSTEM_EXT_PROPERTIES += \
+    persist.dbg.ims_volte_enable=1 \
+    persist.dbg.volte_avail_ovr=1 \
+    persist.dbg.wfc_avail_ovr=1 \
+    persist.radio.calls.on.ims=1 \
+    persist.radio.data_con_recovery=true \
+    persist.radio.vowifi.enabled=true \
+    persist.sys.cust.lte_config=true
