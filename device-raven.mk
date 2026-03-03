@@ -18,6 +18,9 @@ include device/google/gs101/device-shipping-common.mk
 # Camera
 $(call inherit-product-if-exists, vendor/google/camera/config.mk)
 
+# Pixel Parts
+$(call inherit-product-if-exists, packages/apps/PixelParts/device.mk)
+
 # Bluetooth
 PRODUCT_PACKAGES += \
     android.hardware.bluetooth.prebuilt.xml \
