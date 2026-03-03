@@ -16,6 +16,9 @@ include device/google/gs101/device-shipping-common.mk
 # Camera
 $(call inherit-product-if-exists, vendor/google/camera/config.mk)
 
+# Pixel Parts
+$(call inherit-product-if-exists, packages/apps/PixelParts/device.mk)
+
 # Overlays
 PRODUCT_PACKAGES += \
     DeviceAsWebcamRaviole \
