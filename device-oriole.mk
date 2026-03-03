@@ -5,10 +5,9 @@
 # SPDX-License-Identifier: Apache-2.0
 #
 
-TARGET_LINUX_KERNEL_VERSION := 6.1
-TARGET_KERNEL_DEVICE := raviole
-TARGET_KERNEL_DIR := device/google/$(TARGET_KERNEL_DEVICE)-kernels/$(TARGET_LINUX_KERNEL_VERSION)
-TARGET_KERNEL_PLATFORM_SOURCE := google/gs-$(TARGET_LINUX_KERNEL_VERSION)
+TARGET_LINUX_KERNEL_VERSION := $(RELEASE_KERNEL_ORIOLE_VERSION)
+TARGET_KERNEL_DIR ?= device/google/raviole-kernels/aosp
+TARGET_BOARD_KERNEL_HEADERS ?= $(TARGET_KERNEL_DIR)/kernel-headers
 
 DEVICE_PACKAGE_OVERLAYS += device/google/raviole/oriole/overlay
 DEVICE_PACKAGE_OVERLAYS += device/google/raviole/oriole/overlay-lineage
