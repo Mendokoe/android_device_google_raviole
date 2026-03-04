@@ -60,6 +60,11 @@ TARGET_VENDOR_PROP += $(DEVICE_PATH)/$(DEVICE_CODENAME)/vendor.prop
 PRODUCT_COPY_FILES += \
     device/google/gs101/conf/init.recovery.device.rc:$(TARGET_COPY_OUT_RECOVERY)/root/init.recovery.oriole.rc
 
+# sysconfig XML from stock
+PRODUCT_COPY_FILES += \
+	$(LOCAL_PATH)/product-sysconfig-stock.xml:$(TARGET_COPY_OUT_PRODUCT)/etc/sysconfig/product-sysconfig-stock.xml
+    
+# Sensors
 PRODUCT_PACKAGES += \
     init.recovery.oriole.touch.rc
 
