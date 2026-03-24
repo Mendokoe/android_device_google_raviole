@@ -1,0 +1,9 @@
+# Configuration for Pixel 6
+ro.mist.display=1080 x 2400, 90Hz
+ro.mist.battery=4614 mAh
+ro.mist.soc=Google Tensor Gen 1
+ro.mist.camera=50 MP + 12 MP
+ro.mist.front=8 MP
+ro.mist.platform=GS101
+ro.mist.screen=6.4" AMOLED
+ro.mist.device.name=Google Pixel 6

@@ -10,6 +10,9 @@ TARGET_LINUX_KERNEL_VERSION := $(RELEASE_KERNEL_ORIOLE_VERSION)
 TARGET_KERNEL_DIR ?= device/google/raviole-kernels/aosp
 TARGET_BOARD_KERNEL_HEADERS ?= $(TARGET_KERNEL_DIR)/kernel-headers
 
+#BCR
+$(call inherit-product, vendor/bcr/bcr.mk)
+
 # Inherit from gs101
 include device/google/gs101/device-shipping-common.mk
 

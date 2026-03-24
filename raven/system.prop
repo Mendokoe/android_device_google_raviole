@@ -1,0 +1,9 @@
+# Configuration for Pixel 6 Pro
+ro.mist.display=1440 x 3120, 120Hz
+ro.mist.battery=5003 mAh
+ro.mist.soc=Google Tensor Gen 1
+ro.mist.camera=50 MP + 48 MP + 12 MP
+ro.mist.front=11.1 MP
+ro.mist.platform=GS101
+ro.mist.screen=6.7" AMOLED
+ro.mist.device.name=Google Pixel 6 Pro
