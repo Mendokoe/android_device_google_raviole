@@ -3,7 +3,6 @@
 # product partition
 
 # AiAi
-product/priv-app/DeviceIntelligenceNetworkPrebuilt-astrea_20240329.00_RC02/DeviceIntelligenceNetworkPrebuilt-astrea_20240329.00_RC02.apk;PRESIGNED
 product/priv-app/DevicePersonalizationPrebuiltPixel2021-playstore_aiai_20250306.00_RC10/DevicePersonalizationPrebuiltPixel2021-playstore_aiai_20250306.00_RC10.apk;PRESIGNED
 
 # Audio
