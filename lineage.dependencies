@@ -1,0 +1,38 @@
+[
+  {
+    "repository": "Mendokoe/android_device_google_gs101",
+    "remote": "github-non-los",
+    "branch": "mist-gms",
+    "target_path": "device/google/gs101"
+  },
+  {
+    "repository": "Mendokoe/android_device_google_gs-common",
+    "remote": "github-non-los",
+    "branch": "16.2",
+    "target_path": "device/google/gs-common"
+  },
+  {
+    "repository": "Mendokoe/proprietary_vendor_google_oriole",
+    "remote": "github-non-los",
+    "branch": "mist-gms",
+    "target_path": "vendor/google/oriole"
+  },
+  {
+    "repository": "Mendokoe/proprietary_vendor_google_raven",
+    "remote": "github-non-los",
+    "branch": "mist-gms",
+    "target_path": "vendor/google/raven"
+  },
+  {
+    "repository": "Biohazardousrom/device_google_raviole-kernels_6.1",
+    "remote": "github-non-los",
+    "branch": "16",
+    "target_path": "device/google/raviole-kernels"
+  },
+  {
+    "repository": "Libra420T/vendor_google_camera",
+    "remote": "github-non-los",
+    "branch": "16",
+    "target_path": "vendor/google/camera"
+  }
+]
