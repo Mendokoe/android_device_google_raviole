@@ -5,7 +5,25 @@
 #
 
 # Inherit some common stuff
-$(call inherit-product, vendor/lineage/config/common_full_phone.mk)
+$(call inherit-product, vendor/matrixx/config/common_full_phone.mk)
+
+#Matrixx Flags
+TARGET_BOOT_ANIMATION_RES := 1080
+TARGET_ENABLE_BLUR := true
+TARGET_FACE_UNLOCK_SUPPORTED := true
+TARGET_CUSTOM_UDFPS := true
+BYPASS_CHARGE_SUPPORTED := true
+MATRIXX_BUILD_TYPE := Unofficial
+MATRIXX_MAINTAINER := srly8
+TARGET_SUPPORTED_REFRESH_RATES := 60,90
+WITH_GMS := true
+TARGET_INCLUDE_PIXEL_LAUNCHER := true
+TARGET_DEFAULT_PIXEL_LAUNCHER := false
+WITH_GMS_COMMS_SUITE := true
+WITH_GMS_AICORE := true
+WITH_BCR := true
+PRODUCT_NO_CAMERA := true
+TARGET_SUPPORTS_QUICK_TAP := true
 
 # Inherit device configuration
 DEVICE_CODENAME := oriole
@@ -16,7 +34,7 @@ $(call inherit-product, $(DEVICE_PATH)/aosp_$(DEVICE_CODENAME).mk)
 # Device identifier. This must come after all inclusions
 PRODUCT_BRAND := google
 PRODUCT_MODEL := Pixel 6
-PRODUCT_NAME := lineage_$(DEVICE_CODENAME)
+PRODUCT_NAME := matrixx_$(DEVICE_CODENAME)
 
 # Boot animation
 TARGET_SCREEN_HEIGHT := 2400
