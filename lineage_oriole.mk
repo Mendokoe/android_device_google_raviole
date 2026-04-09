@@ -10,8 +10,7 @@ $(call inherit-product, vendor/lineage/config/common_full_phone.mk)
 # MISTOS
 MIST_BUILD_TYPE := OFFICIAL
 MISTOS_MAINTAINER := srly8
-WITH_GMS := true
-TARGET_USES_MINI_GAPPS := true
+#WITH_GMS := true
 TARGET_ENABLE_BLUR := true
 TARGET_SUPPORTS_QUICK_TAP := true
 TARGET_HAS_UDFPS := true
