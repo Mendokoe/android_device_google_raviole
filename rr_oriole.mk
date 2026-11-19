@@ -5,7 +5,7 @@
 #
 
 # Inherit some common stuff
-$(call inherit-product, vendor/lineage/config/common_full_phone.mk)
+$(call inherit-product, vendor/rr/config/common_full_phone.mk)
 
 # Inherit device configuration
 DEVICE_CODENAME := oriole
@@ -14,7 +14,7 @@ VENDOR_PATH := vendor/google/oriole
 $(call inherit-product, $(DEVICE_PATH)/aosp_$(DEVICE_CODENAME).mk)
 
 # Device identifier. This must come after all inclusions
-PRODUCT_NAME := lineage_$(DEVICE_CODENAME)
+PRODUCT_NAME := rr_$(DEVICE_CODENAME)
 PRODUCT_SYSTEM_BRAND := google
 PRODUCT_SYSTEM_MANUFACTURER := Google
 PRODUCT_SYSTEM_NAME := generic_system_google
@@ -22,6 +22,14 @@ PRODUCT_SYSTEM_NAME := generic_system_google
 # Boot animation
 TARGET_SCREEN_HEIGHT := 2400
 TARGET_SCREEN_WIDTH := 1080
+
+#Flags RR
+RR_MAINTAINER := iConnanT x Kurumi
+WITH_GMS := true
+TARGET_FACE_UNLOCK_SUPPORTED := true
+TARGET_SUPPORTS_BLUR := true
+TARGET_SUPPORTS_QUICK_TAP := true
+TARGET_INCLUDE_LIVE_WALLPAPERS := true
 
 PRODUCT_BUILD_PROP_OVERRIDES += \
     BuildDesc="oriole-user 17 CP3A.261005.002.A1 16269273 release-keys" \
