@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<kernel-manager>
+    <!-- Little Cluster (Cortex-A55: CPU 0-3) -->
+    <cpu
+        id="little"
+        group="Little Cluster"
+        cpuIds="0-3"
+        minId="axion_min_freq"
+        maxId="axion_max_freq"
+        governorId="little_cpu_governor"
+        node="/sys/devices/system/cpu/cpufreq/policy0" />
+
+    <!-- Mid Cluster (Cortex-A76: CPU 4-5) -->
+    <cpu
+        id="mid"
+        group="Mid Cluster"
+        cpuIds="4-5"
+        minId="axion_min_freq_mid"
+        maxId="axion_max_freq_mid"
+        governorId="mid_cpu_governor"
+        node="/sys/devices/system/cpu/cpufreq/policy4" />
+
+    <!-- Big Cluster (Cortex-X1: CPU 6-7) -->
+    <cpu
+        id="big"
+        group="Big Cluster"
+        cpuIds="6-7"
+        minId="axion_min_freq_big"
+        maxId="axion_max_freq_big"
+        governorId="big_cpu_governor"
+        node="/sys/devices/system/cpu/cpufreq/policy6" />
+
+    <!-- GPU ARM Mali-G78 MP20 -->
+    <gpu
+        node="/sys/devices/platform/1c500000.mali"
+        minNode="/sys/devices/platform/1c500000.mali/scaling_min_freq"
+        maxNode="/sys/devices/platform/1c500000.mali/scaling_max_freq"
+        currentNode="/sys/devices/platform/1c500000.mali/cur_freq"
+        usageNode="/sys/devices/platform/1c500000.mali/utilization"
+        availablePath="/sys/devices/platform/1c500000.mali/available_frequencies"
+        frequencyMultiplier="1000" />
+</kernel-manager>
