@@ -5,7 +5,7 @@
 #
 
 # Inherit some common stuff
-$(call inherit-product, vendor/rr/config/common_full_phone.mk)
+$(call inherit-product, vendor/lineage/config/common_full_phone.mk)
 
 # Inherit device configuration
 DEVICE_CODENAME := oriole
@@ -24,13 +24,14 @@ TARGET_SCREEN_HEIGHT := 2400
 TARGET_SCREEN_WIDTH := 1080
 
 #Flags RR
-RR_MAINTAINER := iConnanTxKurumi
-WITH_GMS := true
-TARGET_FACE_UNLOCK_SUPPORTED := true
-TARGET_SUPPORTS_BLUR := true
-TARGET_SUPPORTS_QUICK_TAP := true
-TARGET_INCLUDE_LIVE_WALLPAPERS := true
-LINEAGE_BUILDTYPE := UNOFFICIAL
+RISING_MAINTAINER := iConnanTxKurumi
+
+PRODUCT_BUILD_PROP_OVERRIDES += \
+    RisingChipset="Google Tensor" \
+    RisingMaintainer="$(RISING_MAINTAINER)"
+
+TARGET_ENABLE_BLUR := true
+PRODUCT_NO_CAMERA := false
 TARGET_HAS_UDFPS := true
 
 PRODUCT_BUILD_PROP_OVERRIDES += \
