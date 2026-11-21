@@ -23,13 +23,15 @@ PRODUCT_SYSTEM_NAME := generic_system_google
 TARGET_SCREEN_HEIGHT := 2400
 TARGET_SCREEN_WIDTH := 1080
 
-#Flags RR
+#Flags Rising
 RISING_MAINTAINER := iConnanTxKurumi
 
 PRODUCT_BUILD_PROP_OVERRIDES += \
     RisingChipset="Google Tensor" \
     RisingMaintainer="$(RISING_MAINTAINER)"
 
+WITH_GMS := true
+TARGET_USES_PICO_GAPPS := true
 TARGET_ENABLE_BLUR := true
 PRODUCT_NO_CAMERA := false
 TARGET_HAS_UDFPS := true
