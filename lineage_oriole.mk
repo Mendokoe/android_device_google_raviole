@@ -40,6 +40,10 @@ TARGET_DOZE_DOUBLE_TAP_PULSE_SUPPORTED ?= true
 TARGET_DOZE_PICKUP_PULSE_SUPPORTED ?= true
 TARGET_DOZE_SIDE_FPS_PULSE_SUPPORTED ?= false
 
+# Ax Kernel Manager XML
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/configs/kernel/ax_kernel_manager.xml:$(TARGET_COPY_OUT_VENDOR)/etc/ax_kernel_manager.xml
+
 PRODUCT_BUILD_PROP_OVERRIDES += \
     BuildDesc="oriole-user 16 BP4A.251205.006 14401865 release-keys" \
     BuildFingerprint=google/oriole/oriole:16/BP4A.251205.006/14401865:user/release-keys \
