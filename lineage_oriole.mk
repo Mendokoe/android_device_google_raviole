@@ -56,3 +56,6 @@ PRODUCT_ARTIFACT_PATH_REQUIREMENT_ALLOWED_LIST += \
     system/priv-app/DocumentsUIGoogle/DocumentsUIGoogle.apk \
     system/priv-app/GooglePackageInstaller/GooglePackageInstaller.apk \
     system/priv-app/TagGoogle/TagGoogle.apk
+
+# Custom signing keys
+-include vendor/lineage-priv/keys/keys.mk
