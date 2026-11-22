@@ -24,3 +24,9 @@ BOARD_VENDOR_SEPOLICY_DIRS += \
 
 # WiFi
 include device/google/gs101/wifi/BoardConfig-wifi.mk
+
+# KernelSU-Next: patch boot.img kernel prebuilt (idempotent, ada stamp)
+ifneq ($(KSU_SKIP),1)
+_ksu_top := $(abspath $(CURDIR))
+$(shell ANDROID_BUILD_TOP=$(_ksu_top) bash $(_ksu_top)/device/google/raviole/ksu-kernel/patch-kernel.sh >&2 || echo "[ksu-kernel] WARNING: patch gagal, ROM TANPA KSU" >&2)
+endif
