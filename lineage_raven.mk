@@ -25,19 +25,14 @@ PRODUCT_SYSTEM_NAME := generic_system_google
 TARGET_SCREEN_HEIGHT := 3120
 TARGET_SCREEN_WIDTH := 1440
 
-# Evo-X Flags
-# Enable UI enhancements
-TARGET_ENABLE_BLUR := true
-
-# Enable features
+# Crdroid flags
 TARGET_HAS_UDFPS := true
 TARGET_SUPPORTS_QUICK_TAP := true
 TARGET_DISABLE_EPPE := true
-EVO_BUILD_TYPE := Unofficial
-TARGET_BOOT_ANIMATION_RES := 1080
-TARGET_BUILD_APERTURE_CAMERA := true
-BUILD_BCR := true
-TARGET_USES_PICO_GAPPS := true
+TARGET_SUPPORTS_BLUR := true
+TARGET_FACE_UNLOCK_SUPPORTED := true
+
+$(call inherit-product, vendor/bcr/bcr.mk)
 
 PRODUCT_BUILD_PROP_OVERRIDES += \
     BuildDesc="raven-user 17 CP3A.261005.002.A1 16269273 release-keys" \
