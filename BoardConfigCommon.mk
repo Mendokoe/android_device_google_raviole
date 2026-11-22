@@ -28,5 +28,11 @@ include device/google/gs101/wifi/BoardConfig-wifi.mk
 # KernelSU-Next: patch boot.img kernel prebuilt (idempotent, ada stamp)
 ifneq ($(KSU_SKIP),1)
 _ksu_top := $(abspath $(CURDIR))
-$(shell ANDROID_BUILD_TOP=$(_ksu_top) bash $(_ksu_top)/device/google/raviole/ksu-kernel/patch-kernel.sh >&2 || echo "[ksu-kernel] WARNING: patch gagal, ROM TANPA KSU" >&2)
+_ksu_rc := $(shell ANDROID_BUILD_TOP=$(_ksu_top) bash $(_ksu_top)/device/google/raviole/ksu-kernel/patch-kernel.sh >&2; echo $$?)
+ifneq ($(_ksu_rc),0)
+$(warning [ksu-kernel] patch gagal, ROM TANPA KSU)
+ifeq ($(KSU_STRICT),1)
+$(error [ksu-kernel] KSU_STRICT=1 dan patch gagal)
+endif
+endif
 endif
