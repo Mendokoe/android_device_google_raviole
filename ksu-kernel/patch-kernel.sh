@@ -66,6 +66,9 @@ for m in kernelsu susfs; do
     [ "${KSU_UPDATE:-0}" = 1 ] && git -C "$D" pull -q --ff-only >&2
   elif [ -d "$D" ] && [ -f "$D/BUILD.bazel" ]; then
     :   # already provided (e.g. by a manifest)
+  elif [ -f "$TOP/vendor/ksu/$m/BUILD.bazel" ]; then
+    log "copying $m from vendor/ksu (manifest)"
+    mkdir -p "$D" && tar -C "$TOP/vendor/ksu/$m" --exclude=.git -cf - . | tar -C "$D" -xf - || die "copy of $m failed"
   else
     log "cloning $m module sources"
     git clone -q --depth=1 -b "$MOD_BRANCH" "https://github.com/$OWNER/android_kernel_google_gs-6.1_$m.git" "$D" || die "clone of $m failed"
@@ -83,6 +86,9 @@ KO=$KB/bazel-bin/private/google-modules/kernelsu/kernelsu/kernelsu.ko
 
 # 3) ksud (pinned checksum)
 KSUD=${KSUD:-$KSUD_CACHE}
+if [ ! -x "$KSUD" ] && [ -x "$TOP/vendor/ksu/ksud/ksud" ]; then
+  ( cd "$TOP/vendor/ksu/ksud" && sha256sum -c ksud.sha256 >&2 ) && KSUD=$TOP/vendor/ksu/ksud/ksud || die "ksud checksum mismatch (vendor/ksu)"
+fi
 if [ ! -x "$KSUD" ]; then
   mkdir -p "$(dirname "$KSUD_CACHE")"
   log "downloading ksud v3.4.2"
