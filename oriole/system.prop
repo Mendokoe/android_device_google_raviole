@@ -1,0 +1,6 @@
+# Configuration for Pixel 6
+ro.infinity.soc=Google Tensor
+ro.infinity.battery=4614 mAh
+ro.infinity.display=1080 x 2400, AMOLED 90Hz
+ro.infinity.camera=50 MP + 12 MP
+ro.product.marketname=Pixel 6
