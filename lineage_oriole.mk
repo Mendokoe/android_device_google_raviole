@@ -29,6 +29,7 @@ TARGET_SUPPORTS_QUICK_TAP := true
 TARGET_DISABLE_EPPE := true
 TARGET_SUPPORTS_BLUR := true
 TARGET_FACE_UNLOCK_SUPPORTED := true
+WITH_GMS := false
 
 $(call inherit-product, vendor/bcr/bcr.mk)
 
