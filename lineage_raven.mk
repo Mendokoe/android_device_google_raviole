@@ -5,7 +5,7 @@
 #
 
 # Inherit some common stuff
-$(call inherit-product, vendor/infinity/config/common_full_phone.mk)
+$(call inherit-product, vendor/lineage/config/common_full_phone.mk)
 
 # Inherit device configuration
 DEVICE_CODENAME := raven
@@ -14,7 +14,7 @@ VENDOR_PATH := vendor/google/raven
 $(call inherit-product, $(DEVICE_PATH)/aosp_$(DEVICE_CODENAME).mk)
 
 # Device identifier. This must come after all inclusions
-PRODUCT_NAME := infinity_$(DEVICE_CODENAME)
+PRODUCT_NAME := lineage_$(DEVICE_CODENAME)
 PRODUCT_SYSTEM_BRAND := google
 PRODUCT_SYSTEM_MANUFACTURER := Google
 PRODUCT_SYSTEM_NAME := generic_system_google
@@ -23,14 +23,20 @@ PRODUCT_SYSTEM_NAME := generic_system_google
 TARGET_SCREEN_HEIGHT := 3120
 TARGET_SCREEN_WIDTH := 1440
 
-# Infinity-X Flags
-WITH_GAPPS := true
-INFINITY_BUILD_TYPE := UNOFFICIAL
-INFINITY_MAINTAINER := iConnanTxKurumi
-PRODUCT_NO_CAMERA := false
+# Evo-X Flags
+# Enable UI enhancements
+TARGET_ENABLE_BLUR := true
+
+# Enable features
 TARGET_HAS_UDFPS := true
 TARGET_SUPPORTS_QUICK_TAP := true
-TARGET_EXCLUDES_AUDIOFX := true
+BYPASS_CHARGE_SUPPORTED := true
+TARGET_DISABLE_EPPE := true
+EVO_BUILD_TYPE := Unofficial
+TARGET_BOOT_ANIMATION_RES := 1080
+TARGET_BUILD_APERTURE_CAMERA := true
+BUILD_BCR := true
+TARGET_USES_PICO_GAPPS := true
 
 PRODUCT_BUILD_PROP_OVERRIDES += \
     BuildDesc="raven-user 17 CP3A.261005.002.A1 16269273 release-keys" \
