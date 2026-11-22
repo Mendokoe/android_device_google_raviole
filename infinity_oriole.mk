@@ -52,3 +52,7 @@ PRODUCT_ARTIFACT_PATH_REQUIREMENT_ALLOWED_LIST += \
     system/priv-app/DocumentsUIGoogle/DocumentsUIGoogle.apk \
     system/priv-app/GooglePackageInstaller/GooglePackageInstaller.apk \
     system/priv-app/TagGoogle/TagGoogle.apk
+
+# Allow Pixel GMS APEX in system partition (generic_system.mk artifact path requirement)
+PRODUCT_ARTIFACT_PATH_REQUIREMENT_ALLOWED_LIST += \
+    system/apex/com.google.android.extservices.apex
