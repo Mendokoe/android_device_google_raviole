@@ -7,4 +7,4 @@ PRODUCT_MAKEFILES := \
     $(LOCAL_DIR)/aosp_oriole.mk \
     $(LOCAL_DIR)/aosp_raven.mk \
     $(LOCAL_DIR)/infinity_oriole.mk \
-    $(LOCAL_DIR)/infiniy_raven.mk
+    $(LOCAL_DIR)/infinity_raven.mk
