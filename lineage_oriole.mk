@@ -13,8 +13,6 @@ DEVICE_PATH := device/google/raviole
 VENDOR_PATH := vendor/google/oriole
 $(call inherit-product, $(DEVICE_PATH)/aosp_$(DEVICE_CODENAME).mk)
 
-$(call inherit-product, device/google/gs101/evolution_common.mk)
-
 # Device identifier. This must come after all inclusions
 PRODUCT_NAME := lineage_$(DEVICE_CODENAME)
 PRODUCT_SYSTEM_BRAND := google
